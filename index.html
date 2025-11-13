@@ -17,7 +17,8 @@
 <body>
     <div class="page">
         <!-- NAVBAR -->
-        <header>
+
+        <header class="scroll-animate fade-down">
             <div class="nav">
                 <a href="#top" class="logo">
                     <div class="logo-circle">A</div>
@@ -45,12 +46,6 @@
                 <!-- HERO -->
                 <section class="hero" aria-label="Profil singkat">
                     <div class="hero-left">
-                        <div class="hero-pill">
-                            <div class="hero-pill-dot"></div>
-                            <span>8+ tahun pengalaman</span>
-                            <span>•</span>
-                            <span>Website &amp; Mobile Apps</span>
-                        </div>
 
                         <div>
                             <h1 class="hero-title">
@@ -65,10 +60,9 @@
                         </div>
 
                         <div class="hero-tags">
-                            <span class="tag tag-primary">Laravel</span>
-                            <span class="tag tag-primary">Flutter</span>
-                            <span class="tag">PHP &amp; MySQL</span>
-                            <span class="tag">REST API</span>
+                            <span class="tag tag-primary">Frontend</span>
+                            <span class="tag tag-primary">Backend</span>
+                            <span class="tag">RESTful API</span>
                             <span class="tag">Android &amp; iOS</span>
                         </div>
 
@@ -92,85 +86,20 @@
                     </div>
 
                     <div class="hero-right">
-                        <div class="hero-card">
-                            <div class="hero-orbit"></div>
-                            <div class="hero-orbit-dot"></div>
-
-                            <div class="hero-card-header">
-                                <div class="hero-card-header-left">
-                                    <div class="hero-name">Armin Bayu Murti</div>
-                                    <div class="hero-role">Fullstack Website &amp; Mobile Developer</div>
-                                    <div class="hero-location">Bantul, Yogyakarta</div>
-                                </div>
-                                <div class="hero-photo-wrap">
-                                    <img src="assets/images/profile.jpg" alt="Foto Armin Bayu Murti" class="hero-photo">
-                                </div>
-                                <div class="badge-availability">
-                                    Tersedia untuk peluang baru
-                                </div>
-                            </div>
-
-                            <div class="hero-card-body">
-                                <div class="hero-skills">
-                                    <div class="hero-skills-title">Tech utama</div>
-                                    <div class="skill-list">
-                                        <span class="skill-pill">PHP</span>
-                                        <span class="skill-pill">Laravel</span>
-                                        <span class="skill-pill">Flutter</span>
-                                        <span class="skill-pill">JavaScript / jQuery</span>
-                                        <span class="skill-pill">MySQL</span>
-                                        <span class="skill-pill">REST API</span>
-                                    </div>
-                                </div>
-                                <div class="hero-contact">
-                                    <div class="hero-contact-item">
-                                        <span class="hero-contact-label">Email</span>
-                                        <span class="hero-contact-value">
-                                            <a href="mailto:arminbayu07@gmail.com">arminbayu07@gmail.com</a>
-                                        </span>
-                                    </div>
-                                    <div class="hero-contact-item">
-                                        <span class="hero-contact-label">Telepon / WhatsApp</span>
-                                        <span class="hero-contact-value">
-                                            <a href="tel:+6285725834330">+62 857 2583 4330</a>
-                                        </span>
-                                    </div>
-                                    <div class="hero-contact-item">
-                                        <span class="hero-contact-label">LinkedIn</span>
-                                        <span class="hero-contact-value">
-                                            <a href="https://www.linkedin.com/in/armin-bayu-murti-a806701b7"
-                                                target="_blank" rel="noreferrer">
-                                                linkedin.com/in/armin-bayu-murti-a806701b7
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <div class="hero-contact-item">
-                                        <span class="hero-contact-label">GitHub</span>
-                                        <span class="hero-contact-value">
-                                            <a href="https://github.com/arminbayu" target="_blank" rel="noreferrer">
-                                                github.com/arminbayu
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="hero-card-footer">
-                                <span>
-                                    <strong>2017 - sekarang</strong><br />
-                                    Fullstack Dev (Web &amp; Mobile)
-                                </span>
-                                <span>
-                                    <strong>PT Fasa Centra Artajaya</strong><br />
-                                    &amp; PT Karya Putra Esdepeel
-                                </span>
-                            </div>
+                        <div class="hero-photo-wrap">
+                            <img src="assets/images/profile.jpg" alt="Foto Armin Bayu Murti" class="hero-photo">
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-dot"></div>
+                            <span>8+ tahun pengalaman</span>
+                            <span>•</span>
+                            <span>Website &amp; Mobile Apps</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- ABOUT -->
-                <section id="about">
+                <section id="about" class="scroll-animate fade-up">
                     <div class="section-header">
                         <div class="section-eyebrow">Profil</div>
                         <h2 class="section-title">Tentang saya</h2>
@@ -197,8 +126,43 @@
                     </div>
                 </section>
 
+                <!-- EDUCATION -->
+                <section id="education" class="scroll-animate fade-up">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Pendidikan</div>
+                        <h2 class="section-title">Pendidikan Terakhir</h2>
+                        <p class="section-description">
+                            Latar belakang pendidikan formal yang mendukung perjalanan saya sebagai Fullstack Developer.
+                        </p>
+                    </div>
+
+                    <div class="card education-card">
+                        <div class="education-item">
+
+                            <!-- Logo UTY -->
+                            <div class="education-logo-wrap">
+                                <img src="assets/images/uty.png" alt="Universitas Teknologi Yogyakarta"
+                                    class="education-logo">
+                            </div>
+
+                            <div class="education-detail">
+                                <div class="education-school">Universitas Teknologi Yogyakarta <strong>(2012 –
+                                        2017)</strong>
+                                </div>
+                                <div class="education-major">Sarjana Teknik Informatika (S1)</div>
+                                <p class="education-desc">
+                                    Lulus dengan GPA <strong>3.67 / 4.0</strong>.<br />
+                                    Fokus pada dasar pemrograman, jaringan, basis data, pengembangan web & mobile,
+                                    serta logika komputasi yang menjadi pondasi saya sebagai Fullstack Developer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
                 <!-- SKILLS -->
-                <section id="skills">
+                <section id="skills" class="scroll-animate fade-up">
                     <div class="section-header">
                         <div class="section-eyebrow">Skill</div>
                         <h2 class="section-title">Teknologi &amp; kemampuan</h2>
@@ -221,10 +185,13 @@
                                 <span class="skill-pill">Yii2</span>
                                 <span class="skill-pill">MySQL</span>
                                 <span class="skill-pill">Flutter</span>
-                                <span class="skill-pill">React Native (pengalaman)</span>
+                                <span class="skill-pill">React Native</span>
+                                <span class="skill-pill">Node Js</span>
                                 <span class="skill-pill">JavaScript / jQuery</span>
                                 <span class="skill-pill">REST API</span>
                                 <span class="skill-pill">Git / GitLab</span>
+                                <span class="skill-pill">Visual Studio Code</span>
+                                <span class="skill-pill">Atom</span>
                                 <span class="skill-pill">Postman / Insomnia</span>
                                 <span class="skill-pill">Android Studio</span>
                                 <span class="skill-pill">Xcode</span>
@@ -246,33 +213,39 @@
                                     </div>
                                 </div>
                                 <div class="skills-timeline-item">
-                                    <div class="skills-timeline-year">2018 - 2021</div>
+                                    <div class="skills-timeline-year">2021 - Sekarang</div>
                                     <div class="skills-timeline-tech">
-                                        React Native (mobile app)
-                                    </div>
-                                </div>
-                                <div class="skills-timeline-item">
-                                    <div class="skills-timeline-year">2017 - 2021</div>
-                                    <div class="skills-timeline-tech">
-                                        CodeIgniter (web application)
-                                    </div>
-                                </div>
-                                <div class="skills-timeline-item">
-                                    <div class="skills-timeline-year">2021 - 2023</div>
-                                    <div class="skills-timeline-tech">
-                                        Yii2 (web &amp; API)
+                                        Flutter (Android &amp; iOS)
                                     </div>
                                 </div>
                                 <div class="skills-timeline-item">
                                     <div class="skills-timeline-year">2022 - Sekarang</div>
                                     <div class="skills-timeline-tech">
-                                        Laravel (REST API &amp; web), Node.js (pengalaman)
+                                        Laravel (Frontend, Backend, RESTful API)
                                     </div>
                                 </div>
                                 <div class="skills-timeline-item">
-                                    <div class="skills-timeline-year">2021 - Sekarang</div>
+                                    <div class="skills-timeline-year">2017 - 2021</div>
                                     <div class="skills-timeline-tech">
-                                        Flutter (Android &amp; iOS)
+                                        CodeIgniter (Frontend, Backend, RESTful API)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2018 - 2021</div>
+                                    <div class="skills-timeline-tech">
+                                        React Native (Android & IOS)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2021 - 2023</div>
+                                    <div class="skills-timeline-tech">
+                                        Yii2 (Frontend, Backend, RESTful API)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2022 - 2023</div>
+                                    <div class="skills-timeline-tech">
+                                        Node Js (Backend, RESTful API)
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +254,7 @@
                 </section>
 
                 <!-- EXPERIENCE -->
-                <section id="experience">
+                <section id="experience" class="scroll-animate fade-up">
                     <div class="section-header">
                         <div class="section-eyebrow">Pengalaman Kerja</div>
                         <h2 class="section-title">Rekam jejak profesional</h2>
@@ -299,7 +272,7 @@
                                     <div class="experience-company">PT. Fasa Centra Artajaya</div>
                                 </div>
                                 <div class="experience-meta">
-                                    <div>Juli 2017 - Desember 2021</div>
+                                    <div>Desember 2021 - Sekarang</div>
                                     <div>Full-time</div>
                                 </div>
                             </div>
@@ -330,12 +303,13 @@
                                     <div class="experience-company">PT. Karya Putra Esdepeel</div>
                                 </div>
                                 <div class="experience-meta">
-                                    <div>Desember 2021 - Sekarang</div>
+                                    <div>Juli 2017 - Desember 2021</div>
                                     <div>Full-time</div>
                                 </div>
                             </div>
 
                             <div class="experience-badges">
+                                <span class="experience-badge">Development</span>
                                 <span class="experience-badge">Maintenance &amp; Improvement</span>
                                 <span class="experience-badge">Problem Solving</span>
                                 <span class="experience-badge">API Documentation</span>
@@ -358,7 +332,7 @@
                 </section>
 
                 <!-- PORTFOLIO -->
-                <section id="portfolio">
+                <section id="portfolio" class="scroll-animate fade-up">
                     <div class="section-header">
                         <div class="section-eyebrow">Portofolio</div>
                         <h2 class="section-title">Beberapa projek yang pernah saya kerjakan</h2>
@@ -368,59 +342,224 @@
                         </p>
                     </div>
 
-                    <div class="portfolio-grid">
-
-                        <!-- Kencana Mandiri Lancar -->
-                        <article class="project-card">
+                    <!-- FEATURED PROJECT: Kencana Mandiri Lancar -->
+                    <article class="project-card project-card-featured" id="project-kml">
+                        <div class="project-featured-main">
                             <div class="project-header">
                                 <div class="project-logo-wrap">
                                     <img src="assets/images/kml.png" alt="Kencana Mandiri Lancar" class="project-logo">
                                 </div>
-                                <div>
-                                    <h3 class="project-title">Website &amp; Sistem Informasi – Kencana Mandiri Lancar
-                                    </h3>
+                                <div style="width: 100%;">
+                                    <div style="height: 15px;"></div>
+                                    <div class="project-header-row">
+                                        <h3 class="project-title">Sistem Informasi – Kencana Mandiri Lancar</h3>
+
+                                        <div class="project-link">
+                                            <a href="https://kencanamandirilancar.co.id" target="_blank"
+                                                rel="noreferrer">
+                                                Kunjungi Website
+                                            </a>
+                                        </div>
+                                    </div>
                                     <p class="project-tagline">
-                                        Website company profile dan sistem informasi pendukung operasional perusahaan.
+                                        Website company profile dan sistem informasi pendukung operasional perusahaan
+                                        kargo &amp; logistik
+                                        (tagihan, pengiriman, laporan, dan pengaturan pengguna).
                                     </p>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Company Profile</span>
+                                        <span class="project-tag">Custom CMS</span>
+                                        <span class="project-tag">Responsive Web</span>
+                                        <span class="project-tag">Laravel / PHP</span>
+                                        <span class="project-tag">Sistem Tagihan</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Company Profile</span>
-                                <span class="project-tag">Custom CMS</span>
-                                <span class="project-tag">Laravel / PHP</span>
-                            </div>
-                            <div class="project-link">
-                                <a href="https://kencanamandirilancar.co.id" target="_blank" rel="noreferrer">
-                                    kencanamandirilancar.co.id
-                                </a>
-                            </div>
-                        </article>
+                        </div>
+                        <div class="project-gallery-slider">
+                            <div class="project-gallery-track">
 
-                        <!-- Pertapindo -->
-                        <article class="project-card">
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/kml-dashboard-1.png" alt="Dashboard utama KML">
+                                    <figcaption>Dashboard utama – ringkasan tagihan & pengiriman.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/kml-dashboard-2.png" alt="Log activity KML">
+                                    <figcaption>Log Activity – audit trail setiap perubahan data.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/kml-dashboard-3.png" alt="Halaman settings KML">
+                                    <figcaption>Pengaturan umum & role permission.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/kml-website-home.png" alt="Homepage website KML">
+                                    <figcaption>Landing page website – Safe & Reliable Cargo Solutions.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/kml-website-about.png" alt="Halaman tentang KML">
+                                    <figcaption>Halaman Tentang Kami untuk company profile.</figcaption>
+                                </figure>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Pertapindo -->
+                    <article class="project-card project-card-featured" id="project-pertapindo">
+                        <div class="project-featured-main">
                             <div class="project-header">
                                 <div class="project-logo-wrap">
                                     <img src="assets/images/pertapindo.png" alt="Pertapindo" class="project-logo">
                                 </div>
-                                <div>
-                                    <h3 class="project-title">Website – Pertapindo</h3>
+                                <div style="width: 100%;">
+                                    <div style="height: 15px;"></div>
+                                    <div class="project-header-row">
+                                        <h3 class="project-title">Website – Pertapindo</h3>
+
+                                        <div class="project-link">
+                                            <a href="https://www.pertapindo.id" target="_blank" rel="noreferrer">
+                                                Kunjungi Website
+                                            </a>
+                                        </div>
+                                    </div>
                                     <p class="project-tagline">
-                                        Website company profile untuk perusahaan yang bergerak di bidang proteksi
-                                        kebakaran.
+                                        Website company profile untuk Perhimpunan Tanggap Darurat di Bidang Pertambangan
+                                        dan Energi Indonesia
                                     </p>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Company Profile</span>
+                                        <span class="project-tag">Responsive Web</span>
+                                        <span class="project-tag">Custom CMS</span>
+                                        <span class="project-tag">PHP / Laravel</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Company Profile</span>
-                                <span class="project-tag">Responsive Web</span>
-                                <span class="project-tag">PHP / Laravel</span>
+                        </div>
+                        <div class="project-gallery-slider">
+                            <div class="project-gallery-track">
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/pertapindo-1.png" alt="Dashboard utama KML">
+                                    <figcaption>Halaman Utama Website.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/pertapindo-4.png" alt="Halaman settings KML">
+                                    <figcaption>Halaman Program-Program Andalan Pertapindo.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/pertapindo-3.png" alt="Halaman settings KML">
+                                    <figcaption>Halaman Login Anggota Pertapindo</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/pertapindo-2.png" alt="Log activity KML">
+                                    <figcaption>Halaman Registrasi Anggota Pertapindo</figcaption>
+                                </figure>
+
                             </div>
-                            <div class="project-link">
-                                <a href="https://www.pertapindo.id" target="_blank" rel="noreferrer">
-                                    pertapindo.id
-                                </a>
+                        </div>
+                    </article>
+
+                    <!-- LIFEWAY -->
+                    <article class="project-card project-card-featured" id="project-lifeway">
+                        <div class="project-featured-main">
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/lifeway.png" alt="Lifeway School" class="project-logo">
+                                </div>
+                                <div style="width: 100%;">
+                                    <div style="height: 15px;"></div>
+                                    <div class="project-header-row">
+                                        <h3 class="project-title">Aplikasi Android &amp; iOS – Lifeway School</h3>
+
+                                        <div class="project-link">
+                                            <a href="https://play.google.com/store/apps/details?id=com.tickk.lifeway_app"
+                                                target="_blank" rel="noreferrer">
+                                                Lihat di Google Play
+                                            </a>
+
+                                            <span class="divider">•</span>
+
+                                            <a href="https://apps.apple.com/app/lifeway-school/id6751565471"
+                                                target="_blank" rel="noreferrer">
+                                                Lihat di App Store
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p class="project-tagline">
+                                        Aplikasi mobile untuk orang tua siswa Lifeway School: memantau absensi,
+                                        nilai, tugas, jadwal, dan tagihan sekolah langsung dari smartphone.
+                                    </p>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">IOS</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">Mobile Apps</span>
+                                        <span class="project-tag">Firebase</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">REST API</span>
+                                        <span class="project-tag">Backend Dashboard</span>
+                                        <span class="project-tag">Yii 2</span>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
+                        </div>
+
+                        <div class="project-gallery-slider">
+                            <div class="project-gallery-track">
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-1.png" alt="Lifeway - dashboard utama">
+                                    <figcaption>Dashboard utama aplikasi Lifeway School.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-2.png" alt="Lifeway - overview fitur">
+                                    <figcaption>Ringkasan fitur utama untuk orang tua siswa.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-3.png" alt="Lifeway - kalender akademik">
+                                    <figcaption>Kalender akademik: jadwal ujian, libur, dan event sekolah.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-4.png" alt="Lifeway - jadwal pelajaran">
+                                    <figcaption>Jadwal pelajaran harian langsung di aplikasi.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-5.png" alt="Lifeway - homework & tugas">
+                                    <figcaption>Daftar tugas / homework dengan status pencapaian siswa.</figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-6.png" alt="Lifeway - nilai & kehadiran">
+                                    <figcaption>Informasi nilai &amp; kehadiran yang mudah diakses orang tua.
+                                    </figcaption>
+                                </figure>
+
+                                <figure class="project-gallery-item">
+                                    <img src="assets/images/lifeway-7.png" alt="Lifeway - tagihan & pembayaran">
+                                    <figcaption>Tagihan sekolah dan riwayat pembayaran langsung dari aplikasi.
+                                    </figcaption>
+                                </figure>
+
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <div class="portfolio-grid">
 
                         <!-- SABI -->
                         <article class="project-card">
@@ -429,56 +568,17 @@
                                     <img src="assets/images/sabi.png" alt="SABI" class="project-logo">
                                 </div>
                                 <div>
-                                    <h3 class="project-title">Aplikasi – SABI</h3>
+                                    <h3 class="project-title">Sistem Informasi Pembayaran – SABI</h3>
                                     <p class="project-tagline">
-                                        Solusi aplikasi untuk kebutuhan bisnis yang terintegrasi dengan sistem backend
-                                        khusus.
+                                        Sistem informasi pembayaran dan dashboard admin untuk mengelola transaksi,
+                                        pelanggan, dan laporan keuangan secara terpusat.
                                     </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Maintance & Developing</span>
+                                        <span class="project-tag">Integration Third Party</span>
+                                        <span class="project-tag">Yii 2</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Web &amp; API</span>
-                                <span class="project-tag">Business App</span>
-                            </div>
-                        </article>
-
-                        <!-- Show Us News -->
-                        <article class="project-card">
-                            <div class="project-header">
-                                <div class="project-logo-wrap">
-                                    <img src="assets/images/showus.png" alt="Show Us News" class="project-logo">
-                                </div>
-                                <div>
-                                    <h3 class="project-title">Platform Berita – Show Us News</h3>
-                                    <p class="project-tagline">
-                                        Platform konten berita dan artikel dengan pengelolaan konten dari backend
-                                        khusus.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">News Platform</span>
-                                <span class="project-tag">Content Management</span>
-                            </div>
-                        </article>
-
-                        <!-- OQEO -->
-                        <article class="project-card">
-                            <div class="project-header">
-                                <div class="project-logo-wrap">
-                                    <img src="assets/images/opeo.png" alt="OQEO" class="project-logo">
-                                </div>
-                                <div>
-                                    <h3 class="project-title">Aplikasi – OQEO</h3>
-                                    <p class="project-tagline">
-                                        Sistem/aplikasi yang dikembangkan untuk kebutuhan bisnis dengan integrasi
-                                        layanan pihak ketiga.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Business App</span>
-                                <span class="project-tag">REST API</span>
                             </div>
                         </article>
 
@@ -489,23 +589,148 @@
                                     <img src="assets/images/fasapay.png" alt="FasaPay" class="project-logo">
                                 </div>
                                 <div>
-                                    <h3 class="project-title">Integrasi Sistem – FasaPay</h3>
+                                    <h3 class="project-title">Sistem Informasi Pembayaran Internasional – FasaPay</h3>
                                     <p class="project-tagline">
-                                        Pengembangan &amp; integrasi sistem dengan layanan pembayaran FasaPay.
+                                        Pengembangan &amp; integrasi sistem internal dengan gateway pembayaran FasaPay
+                                        untuk mendukung transaksi internasional secara aman dan terstruktur.
                                     </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Maintance & Developing</span>
+                                        <span class="project-tag">Integration Third Party</span>
+                                        <span class="project-tag">Yii 2</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">Payment Integration</span>
-                                <span class="project-tag">API</span>
                             </div>
                         </article>
 
+                        <!-- Show Us News -->
+                        <article class="project-card">
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/showus.png" alt="Show Us News" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Market Place Advertising – ShowUs</h3>
+                                    <p class="project-tagline">
+                                        Platform marketplace advertising yang menghubungkan pengiklan dengan slot iklan,
+                                        dilengkapi manajemen kampanye dan pengelolaan konten.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">IOS</span>
+                                        <span class="project-tag">React Native</span>
+                                        <span class="project-tag">Codeigniter 3</span>
+                                        <span class="project-tag">Mobile Apps</span>
+                                        <span class="project-tag">Firebase</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">REST API</span>
+                                        <span class="project-tag">Frontend Dashboard</span>
+                                        <span class="project-tag">Backend Dashboard</span>
+                                        <span class="project-tag">Marketplace</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- OPEO -->
+                        <article class="project-card">
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/opeo.png" alt="OPEO" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Aplikasi Preorder – OPEO</h3>
+                                    <p class="project-tagline">
+                                        Aplikasi preorder berbasis web untuk mengelola pesanan produk, stok, dan jadwal
+                                        pengiriman dengan alur persetujuan yang jelas.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">IOS</span>
+                                        <span class="project-tag">React Native</span>
+                                        <span class="project-tag">Codeigniter 3</span>
+                                        <span class="project-tag">Mobile Apps</span>
+                                        <span class="project-tag">Firebase</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">REST API</span>
+                                        <span class="project-tag">Backend Dashboard</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                        <!-- IFGF -->
+                        <article class="project-card">
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/ifgf.png" alt="IFGF JOGJA" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Aplikasi Gereja – IFGF Jogja</h3>
+
+                                    <p class="project-tagline">
+                                        Aplikasi internal untuk kebutuhan manajemen pelayanan, data jemaat, event
+                                        gereja,
+                                        kehadiran, serta informasi mingguan yang terintegrasi dengan backend.
+                                    </p>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">IOS</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">Mobile Apps</span>
+                                        <span class="project-tag">Firebase</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">REST API</span>
+                                        <span class="project-tag">Backend Dashboard</span>
+                                        <span class="project-tag">Yii 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                        <!-- HRIS -->
+                        <article class="project-card">
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/hris.png" alt="HRIS" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Aplikasi HRIS – Human Resource Information System</h3>
+
+                                    <p class="project-tagline">
+                                        Sistem informasi HR yang mencakup absensi, shift kerja, manajemen karyawan,
+                                        penggajian, SLA approval, dan dashboard operasional perusahaan.
+                                    </p>
+
+                                    <div class="project-tags">
+                                        <span class="project-tag">Android</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">Mobile Apps</span>
+                                        <span class="project-tag">Firebase</span>
+                                        <span class="project-tag">Flutter</span>
+                                        <span class="project-tag">REST API</span>
+                                        <span class="project-tag">Backend Dashboard</span>
+                                        <span class="project-tag">Laravel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+
+
                     </div>
+                    <article class="project-card">
+                        <p class="portfolio-note">…dan masih banyak project lain yang saya kerjakan untuk
+                            berbagai klien
+                            dan kebutuhan bisnis.</p>
+                    </article>
                 </section>
 
+
                 <!-- CONTACT -->
-                <section id="contact">
+                <section id="contact" class="scroll-animate fade-up">
                     <div class="section-header">
                         <div class="section-eyebrow">Kontak</div>
                         <h2 class="section-title">Mari berdiskusi</h2>
@@ -581,13 +806,13 @@
         <footer>
             <div class="footer-inner">
                 <span>© <span id="year"></span> Armin Bayu Murti</span>
-                <span>Built with ❤️ &amp; deployed on GitHub Pages</span>
             </div>
         </footer>
     </div>
 
     <!-- JS Utama -->
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js" defer></script>
+
 </body>
 
 </html>

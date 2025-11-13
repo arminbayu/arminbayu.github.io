@@ -6,739 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Armin Bayu Murti - Portfolio</title>
 
-    <!-- Google Font (optional, bisa kamu hapus kalau mau super minimal) -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg: #050816;
-            --bg-soft: #0f172a;
-            --bg-softer: #020617;
-            --primary: #22c55e;
-            --primary-soft: rgba(34, 197, 94, 0.12);
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-            --border: #1f2933;
-            --accent: #38bdf8;
-            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
-            --radius-xl: 18px;
-            --radius-full: 999px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* Layout */
-        .page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            backdrop-filter: blur(16px);
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent);
-            border-bottom: 1px solid rgba(31, 41, 55, 0.8);
-        }
-
-        .nav {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 1rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius-full);
-            background: radial-gradient(circle at 30% 20%, #4ade80, #22c55e, #059669);
-            box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .logo-text-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .logo-text-sub {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.25rem;
-            font-size: 0.85rem;
-        }
-
-        .nav-links a {
-            padding: 0.4rem 0.75rem;
-            border-radius: 999px;
-            color: var(--muted);
-            transition: all 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
-            background-color: rgba(15, 23, 42, 0.85);
-        }
-
-        .nav-cta {
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .nav-cta {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.4rem;
-                padding: 0.45rem 1rem;
-                font-size: 0.8rem;
-                border-radius: 999px;
-                border: 1px solid rgba(148, 163, 184, 0.4);
-                background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.18), rgba(15, 23, 42, 0.95));
-                box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
-            }
-
-            .nav-cta span {
-                color: var(--muted);
-            }
-        }
-
-        main {
-            flex: 1;
-        }
-
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 1.75rem 1.25rem 3.5rem;
-        }
-
-        /* Hero */
-        .hero {
-            display: grid;
-            grid-template-columns: minmax(0, 3fr);
-            gap: 2rem;
-            padding-top: 1.25rem;
-            padding-bottom: 3rem;
-        }
-
-        @media (min-width: 900px) {
-            .hero {
-                grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
-                align-items: center;
-            }
-        }
-
-        .hero-left {
-            display: flex;
-            flex-direction: column;
-            gap: 1.75rem;
-        }
-
-        .hero-pill {
-            align-self: flex-start;
-            padding: 0.25rem 0.5rem;
-            background: rgba(15, 23, 42, 0.9);
-            border-radius: var(--radius-full);
-            border: 1px solid rgba(148, 163, 184, 0.45);
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            font-size: 0.75rem;
-        }
-
-        .hero-pill-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            background: #22c55e;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
-        }
-
-        .hero-title {
-            font-size: clamp(2.1rem, 4vw, 2.8rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        .hero-title span {
-            background: linear-gradient(to right, #22c55e, #38bdf8);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .hero-subtitle {
-            font-size: 0.9rem;
-            color: var(--muted);
-            max-width: 36rem;
-        }
-
-        .hero-subtitle strong {
-            color: #e5e7eb;
-        }
-
-        .hero-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.7rem;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.45);
-            background: rgba(15, 23, 42, 0.85);
-            color: var(--muted);
-        }
-
-        .tag-primary {
-            border-color: rgba(34, 197, 94, 0.6);
-            background: rgba(34, 197, 94, 0.1);
-            color: #bbf7d0;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .btn {
-            font-size: 0.85rem;
-            padding: 0.65rem 1.15rem;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(to right, #22c55e, #16a34a);
-            color: #022c22;
-            font-weight: 600;
-            box-shadow: 0 12px 30px rgba(22, 163, 74, 0.55);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 18px 40px rgba(22, 163, 74, 0.7);
-        }
-
-        .btn-ghost {
-            border-color: rgba(148, 163, 184, 0.5);
-            background: rgba(15, 23, 42, 0.85);
-            color: var(--muted);
-        }
-
-        .btn-ghost:hover {
-            border-color: rgba(148, 163, 184, 0.8);
-            color: #e5e7eb;
-            background: rgba(15, 23, 42, 0.95);
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.25rem;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .hero-meta-item strong {
-            color: #e5e7eb;
-            font-weight: 500;
-        }
-
-        .hero-right {
-            position: relative;
-        }
-
-        .hero-card {
-            background: radial-gradient(circle at top, #0b1220, #020617);
-            border-radius: 24px;
-            padding: 1.4rem 1.4rem 1.5rem;
-            border: 1px solid rgba(148, 163, 184, 0.35);
-            box-shadow: var(--shadow-soft);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-
-        .hero-name {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .hero-role {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .hero-location {
-            font-size: 0.78rem;
-            color: var(--muted);
-        }
-
-        .badge-availability {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 999px;
-            border: 1px solid rgba(52, 211, 153, 0.7);
-            background: rgba(6, 95, 70, 0.5);
-            color: #a7f3d0;
-        }
-
-        .hero-card-body {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.25fr);
-            gap: 0.75rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-card-body {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        .hero-skills {
-            font-size: 0.78rem;
-        }
-
-        .hero-skills-title {
-            font-size: 0.78rem;
-            color: var(--muted);
-            margin-bottom: 0.35rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-        }
-
-        .skill-pill {
-            padding: 0.2rem 0.55rem;
-            border-radius: 999px;
-            background: rgba(15, 23, 42, 0.85);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-            font-size: 0.72rem;
-        }
-
-        .hero-contact {
-            font-size: 0.78rem;
-        }
-
-        .hero-contact-item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 0.35rem;
-        }
-
-        .hero-contact-label {
-            font-size: 0.72rem;
-            color: var(--muted);
-        }
-
-        .hero-contact-value {
-            font-size: 0.78rem;
-        }
-
-        .hero-card-footer {
-            margin-top: 1rem;
-            padding-top: 0.65rem;
-            border-top: 1px dashed rgba(55, 65, 81, 0.9);
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            font-size: 0.72rem;
-            color: var(--muted);
-        }
-
-        .hero-card-footer span strong {
-            color: #e5e7eb;
-        }
-
-        .hero-orbit {
-            position: absolute;
-            inset: -60%;
-            border-radius: 999px;
-            border: 1px dashed rgba(148, 163, 184, 0.18);
-            transform: rotate(8deg);
-            pointer-events: none;
-        }
-
-        .hero-orbit-dot {
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            border-radius: 999px;
-            background: #22c55e;
-            top: 18%;
-            right: 8%;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-        }
-
-        /* Sections */
-        section {
-            padding-top: 1.75rem;
-        }
-
-        .section-header {
-            margin-bottom: 1.1rem;
-        }
-
-        .section-eyebrow {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--muted);
-            margin-bottom: 0.15rem;
-        }
-
-        .section-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-        }
-
-        .section-description {
-            font-size: 0.85rem;
-            color: var(--muted);
-            max-width: 38rem;
-        }
-
-        /* About */
-        .card {
-            background: rgba(15, 23, 42, 0.92);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(30, 64, 175, 0.7);
-            padding: 1.15rem 1.25rem;
-            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.88);
-            font-size: 0.9rem;
-        }
-
-        .about-text p {
-            margin: 0.25rem 0;
-            color: var(--muted);
-            font-size: 0.86rem;
-        }
-
-        .about-highlight {
-            color: #e5e7eb;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
-            gap: 1.25rem;
-        }
-
-        @media (max-width: 900px) {
-            .skills-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        .skills-category {
-            background: rgba(15, 23, 42, 0.92);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(55, 65, 81, 0.85);
-            padding: 1rem 1.1rem;
-        }
-
-        .skills-category-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .skills-category-sub {
-            font-size: 0.76rem;
-            color: var(--muted);
-            margin-bottom: 0.8rem;
-        }
-
-        .skills-list-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            font-size: 0.8rem;
-        }
-
-        .skills-timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            font-size: 0.8rem;
-        }
-
-        .skills-timeline-item {
-            display: flex;
-            gap: 0.9rem;
-        }
-
-        .skills-timeline-year {
-            min-width: 90px;
-            color: var(--muted);
-        }
-
-        .skills-timeline-tech {
-            color: #e5e7eb;
-        }
-
-        /* Experience */
-        .experience-list {
-            display: grid;
-            gap: 0.9rem;
-        }
-
-        .experience-item {
-            background: rgba(15, 23, 42, 0.92);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(75, 85, 99, 0.85);
-            padding: 0.9rem 1rem;
-            font-size: 0.82rem;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 0.75rem;
-            margin-bottom: 0.45rem;
-        }
-
-        .experience-role {
-            font-weight: 600;
-        }
-
-        .experience-company {
-            color: var(--muted);
-            font-size: 0.8rem;
-        }
-
-        .experience-meta {
-            text-align: right;
-            font-size: 0.76rem;
-            color: var(--muted);
-            min-width: 120px;
-        }
-
-        .experience-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .experience-badge {
-            padding: 0.15rem 0.55rem;
-            border-radius: 999px;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-            font-size: 0.7rem;
-            color: var(--muted);
-        }
-
-        .experience-desc {
-            color: var(--muted);
-            padding-left: 0.1rem;
-        }
-
-        .experience-desc ul {
-            padding-left: 1.1rem;
-            margin: 0;
-        }
-
-        .experience-desc li {
-            margin: 0.15rem 0;
-        }
-
-        /* Portfolio */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 0.85rem;
-        }
-
-        @media (min-width: 700px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        .project-card {
-            background: rgba(15, 23, 42, 0.92);
-            border-radius: 16px;
-            border: 1px solid rgba(55, 65, 81, 0.85);
-            padding: 0.85rem 0.9rem;
-            font-size: 0.8rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-
-        .project-title {
-            font-weight: 600;
-            font-size: 0.86rem;
-        }
-
-        .project-tagline {
-            font-size: 0.76rem;
-            color: var(--muted);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            font-size: 0.72rem;
-        }
-
-        .project-tag {
-            padding: 0.15rem 0.45rem;
-            border-radius: 999px;
-            background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(75, 85, 99, 0.9);
-            color: var(--muted);
-        }
-
-        .project-link {
-            margin-top: 0.1rem;
-            font-size: 0.76rem;
-        }
-
-        .project-link a {
-            color: var(--accent);
-        }
-
-        .project-link a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
-            gap: 1.25rem;
-        }
-
-        @media (max-width: 800px) {
-            .contact-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        .contact-card {
-            background: rgba(15, 23, 42, 0.92);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(55, 65, 81, 0.9);
-            padding: 1rem 1.1rem;
-            font-size: 0.85rem;
-        }
-
-        .contact-list {
-            display: grid;
-            gap: 0.55rem;
-            margin-top: 0.4rem;
-            font-size: 0.84rem;
-        }
-
-        .contact-item-label {
-            font-size: 0.76rem;
-            color: var(--muted);
-        }
-
-        .contact-item-value a {
-            color: var(--accent);
-        }
-
-        .contact-item-value a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            border-top: 1px solid rgba(30, 64, 175, 0.7);
-            background: rgba(15, 23, 42, 0.96);
-            font-size: 0.78rem;
-        }
-
-        .footer-inner {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0.75rem 1.25rem 1.1rem;
-            color: var(--muted);
-            display: flex;
-            justify-content: space-between;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        /* Small devices */
-        @media (max-width: 640px) {
-            .nav-links {
-                display: none;
-            }
-
-            .container {
-                padding-inline: 1rem;
-            }
-
-            .hero-card {
-                margin-top: 0.5rem;
-            }
-        }
-    </style>
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -824,10 +97,13 @@
                             <div class="hero-orbit-dot"></div>
 
                             <div class="hero-card-header">
-                                <div>
+                                <div class="hero-card-header-left">
                                     <div class="hero-name">Armin Bayu Murti</div>
                                     <div class="hero-role">Fullstack Website &amp; Mobile Developer</div>
                                     <div class="hero-location">Bantul, Yogyakarta</div>
+                                </div>
+                                <div class="hero-photo-wrap">
+                                    <img src="assets/images/profile.jpg" alt="Foto Armin Bayu Murti" class="hero-photo">
                                 </div>
                                 <div class="badge-availability">
                                     Tersedia untuk peluang baru
@@ -1093,79 +369,138 @@
                     </div>
 
                     <div class="portfolio-grid">
+
+                        <!-- Kencana Mandiri Lancar -->
                         <article class="project-card">
-                            <h3 class="project-title">Aplikasi Sekolah</h3>
-                            <p class="project-tagline">
-                                Aplikasi untuk operasional sekolah: informasi siswa, kegiatan, dan komunikasi dengan
-                                orang tua.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/kml.png" alt="Kencana Mandiri Lancar" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Website &amp; Sistem Informasi – Kencana Mandiri Lancar
+                                    </h3>
+                                    <p class="project-tagline">
+                                        Website company profile dan sistem informasi pendukung operasional perusahaan.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">Mobile App</span>
-                                <span class="project-tag">Laravel / REST API</span>
-                                <span class="project-tag">Flutter</span>
+                                <span class="project-tag">Company Profile</span>
+                                <span class="project-tag">Custom CMS</span>
+                                <span class="project-tag">Laravel / PHP</span>
+                            </div>
+                            <div class="project-link">
+                                <a href="https://kencanamandirilancar.co.id" target="_blank" rel="noreferrer">
+                                    kencanamandirilancar.co.id
+                                </a>
                             </div>
                         </article>
 
+                        <!-- Pertapindo -->
                         <article class="project-card">
-                            <h3 class="project-title">Aplikasi Gereja</h3>
-                            <p class="project-tagline">
-                                Aplikasi internal gereja untuk pengelolaan jemaat, jadwal ibadah, dan informasi
-                                kegiatan.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/pertapindo.png" alt="Pertapindo" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Website – Pertapindo</h3>
+                                    <p class="project-tagline">
+                                        Website company profile untuk perusahaan yang bergerak di bidang proteksi
+                                        kebakaran.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">Mobile App</span>
-                                <span class="project-tag">Notifikasi</span>
-                                <span class="project-tag">Backend API</span>
+                                <span class="project-tag">Company Profile</span>
+                                <span class="project-tag">Responsive Web</span>
+                                <span class="project-tag">PHP / Laravel</span>
+                            </div>
+                            <div class="project-link">
+                                <a href="https://www.pertapindo.id" target="_blank" rel="noreferrer">
+                                    pertapindo.id
+                                </a>
                             </div>
                         </article>
 
+                        <!-- SABI -->
                         <article class="project-card">
-                            <h3 class="project-title">Aplikasi Preorder &amp; Marketplace</h3>
-                            <p class="project-tagline">
-                                Platform untuk pre-order dan marketplace media periklanan dengan integrasi pembayaran
-                                online.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/sabi.png" alt="SABI" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Aplikasi – SABI</h3>
+                                    <p class="project-tagline">
+                                        Solusi aplikasi untuk kebutuhan bisnis yang terintegrasi dengan sistem backend
+                                        khusus.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">E-commerce</span>
-                                <span class="project-tag">Payment Gateway</span>
-                                <span class="project-tag">Web &amp; Mobile</span>
+                                <span class="project-tag">Web &amp; API</span>
+                                <span class="project-tag">Business App</span>
                             </div>
                         </article>
 
+                        <!-- Show Us News -->
                         <article class="project-card">
-                            <h3 class="project-title">Aplikasi Belajar Hijaiyah</h3>
-                            <p class="project-tagline">
-                                Aplikasi edukasi untuk belajar huruf hijaiyah secara interaktif di perangkat mobile.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/showus.png" alt="Show Us News" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Platform Berita – Show Us News</h3>
+                                    <p class="project-tagline">
+                                        Platform konten berita dan artikel dengan pengelolaan konten dari backend
+                                        khusus.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">Edu Tech</span>
-                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">News Platform</span>
+                                <span class="project-tag">Content Management</span>
                             </div>
                         </article>
 
+                        <!-- OQEO -->
                         <article class="project-card">
-                            <h3 class="project-title">Aplikasi Absensi</h3>
-                            <p class="project-tagline">
-                                Aplikasi absensi karyawan real-time dengan backend khusus HR dan laporan kehadiran.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/opeo.png" alt="OQEO" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Aplikasi – OQEO</h3>
+                                    <p class="project-tagline">
+                                        Sistem/aplikasi yang dikembangkan untuk kebutuhan bisnis dengan integrasi
+                                        layanan pihak ketiga.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">HR System</span>
-                                <span class="project-tag">Web &amp; Mobile</span>
+                                <span class="project-tag">Business App</span>
                                 <span class="project-tag">REST API</span>
                             </div>
                         </article>
 
+                        <!-- FasaPay -->
                         <article class="project-card">
-                            <h3 class="project-title">Website Company Profile &amp; Sistem Informasi Kargo</h3>
-                            <p class="project-tagline">
-                                Website company profile dan sistem informasi untuk pengelolaan kargo &amp; logistik.
-                            </p>
+                            <div class="project-header">
+                                <div class="project-logo-wrap">
+                                    <img src="assets/images/fasapay.png" alt="FasaPay" class="project-logo">
+                                </div>
+                                <div>
+                                    <h3 class="project-title">Integrasi Sistem – FasaPay</h3>
+                                    <p class="project-tagline">
+                                        Pengembangan &amp; integrasi sistem dengan layanan pembayaran FasaPay.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="project-tags">
-                                <span class="project-tag">Company Profile</span>
-                                <span class="project-tag">Backend Panel</span>
-                                <span class="project-tag">Custom CMS</span>
+                                <span class="project-tag">Payment Integration</span>
+                                <span class="project-tag">API</span>
                             </div>
                         </article>
+
                     </div>
                 </section>
 
@@ -1183,7 +518,7 @@
 
                     <div class="contact-grid">
                         <div class="contact-card">
-                            <h3 style="margin-top: 0; font-size: 0.95rem;">Informasi kontak</h3>
+                            <h3 class="contact-title">Informasi kontak</h3>
                             <div class="contact-list">
                                 <div>
                                     <div class="contact-item-label">Email</div>
@@ -1224,16 +559,16 @@
                         </div>
 
                         <div class="contact-card">
-                            <h3 style="margin-top: 0; font-size: 0.95rem;">Catatan untuk recruiter / klien</h3>
-                            <p style="margin-top: 0; font-size: 0.84rem; color: #9ca3af;">
+                            <h3 class="contact-title">Catatan untuk recruiter / klien</h3>
+                            <p class="contact-note">
                                 Saya terbuka untuk:
                             </p>
-                            <ul style="margin-top: 0; padding-left: 1.1rem; font-size: 0.84rem; color: #9ca3af;">
+                            <ul class="contact-note-list">
                                 <li>Posisi Fullstack Developer (Web &amp; Mobile).</li>
                                 <li>Development atau refactor sistem HR, sekolah, gereja, dan sistem bisnis lain.</li>
                                 <li>Kerja sama project jangka pendek maupun jangka panjang.</li>
                             </ul>
-                            <p style="font-size: 0.82rem; color: #9ca3af;">
+                            <p class="contact-note">
                                 Silakan kirim detail kebutuhan Anda, saya akan dengan senang hati membantu
                                 menganalisa dan memberikan solusi teknis yang sesuai.
                             </p>
@@ -1251,10 +586,8 @@
         </footer>
     </div>
 
-    <script>
-        // Set tahun otomatis
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <!-- JS Utama -->
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armin Bayu Murti - Portfolio</title>
+
+    <!-- Google Font (optional, bisa kamu hapus kalau mau super minimal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050816;
+            --bg-soft: #0f172a;
+            --bg-softer: #020617;
+            --primary: #22c55e;
+            --primary-soft: rgba(34, 197, 94, 0.12);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2933;
+            --accent: #38bdf8;
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+            --radius-xl: 18px;
+            --radius-full: 999px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout */
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(16px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent);
+            border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+        }
+
+        .nav {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: radial-gradient(circle at 30% 20%, #4ade80, #22c55e, #059669);
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .logo-text-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .logo-text-sub {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 0.85rem;
+        }
+
+        .nav-links a {
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            color: var(--muted);
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background-color: rgba(15, 23, 42, 0.85);
+        }
+
+        .nav-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.4rem;
+                padding: 0.45rem 1rem;
+                font-size: 0.8rem;
+                border-radius: 999px;
+                border: 1px solid rgba(148, 163, 184, 0.4);
+                background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.18), rgba(15, 23, 42, 0.95));
+                box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
+            }
+
+            .nav-cta span {
+                color: var(--muted);
+            }
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 1.75rem 1.25rem 3.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr);
+            gap: 2rem;
+            padding-top: 1.25rem;
+            padding-bottom: 3rem;
+        }
+
+        @media (min-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
+                align-items: center;
+            }
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .hero-pill {
+            align-self: flex-start;
+            padding: 0.25rem 0.5rem;
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: var(--radius-full);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .hero-pill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #22c55e;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title span {
+            background: linear-gradient(to right, #22c55e, #38bdf8);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--muted);
+            max-width: 36rem;
+        }
+
+        .hero-subtitle strong {
+            color: #e5e7eb;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--muted);
+        }
+
+        .tag-primary {
+            border-color: rgba(34, 197, 94, 0.6);
+            background: rgba(34, 197, 94, 0.1);
+            color: #bbf7d0;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            font-size: 0.85rem;
+            padding: 0.65rem 1.15rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #22c55e, #16a34a);
+            color: #022c22;
+            font-weight: 600;
+            box-shadow: 0 12px 30px rgba(22, 163, 74, 0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 40px rgba(22, 163, 74, 0.7);
+        }
+
+        .btn-ghost {
+            border-color: rgba(148, 163, 184, 0.5);
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--muted);
+        }
+
+        .btn-ghost:hover {
+            border-color: rgba(148, 163, 184, 0.8);
+            color: #e5e7eb;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.25rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-meta-item strong {
+            color: #e5e7eb;
+            font-weight: 500;
+        }
+
+        .hero-right {
+            position: relative;
+        }
+
+        .hero-card {
+            background: radial-gradient(circle at top, #0b1220, #020617);
+            border-radius: 24px;
+            padding: 1.4rem 1.4rem 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .hero-name {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-role {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-location {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .badge-availability {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            border: 1px solid rgba(52, 211, 153, 0.7);
+            background: rgba(6, 95, 70, 0.5);
+            color: #a7f3d0;
+        }
+
+        .hero-card-body {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.25fr);
+            gap: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-card-body {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .hero-skills {
+            font-size: 0.78rem;
+        }
+
+        .hero-skills-title {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .skill-pill {
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            font-size: 0.72rem;
+        }
+
+        .hero-contact {
+            font-size: 0.78rem;
+        }
+
+        .hero-contact-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-contact-label {
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .hero-contact-value {
+            font-size: 0.78rem;
+        }
+
+        .hero-card-footer {
+            margin-top: 1rem;
+            padding-top: 0.65rem;
+            border-top: 1px dashed rgba(55, 65, 81, 0.9);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            font-size: 0.72rem;
+            color: var(--muted);
+        }
+
+        .hero-card-footer span strong {
+            color: #e5e7eb;
+        }
+
+        .hero-orbit {
+            position: absolute;
+            inset: -60%;
+            border-radius: 999px;
+            border: 1px dashed rgba(148, 163, 184, 0.18);
+            transform: rotate(8deg);
+            pointer-events: none;
+        }
+
+        .hero-orbit-dot {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 999px;
+            background: #22c55e;
+            top: 18%;
+            right: 8%;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+        }
+
+        /* Sections */
+        section {
+            padding-top: 1.75rem;
+        }
+
+        .section-header {
+            margin-bottom: 1.1rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--muted);
+            margin-bottom: 0.15rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .section-description {
+            font-size: 0.85rem;
+            color: var(--muted);
+            max-width: 38rem;
+        }
+
+        /* About */
+        .card {
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(30, 64, 175, 0.7);
+            padding: 1.15rem 1.25rem;
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.88);
+            font-size: 0.9rem;
+        }
+
+        .about-text p {
+            margin: 0.25rem 0;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .about-highlight {
+            color: #e5e7eb;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 900px) {
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .skills-category {
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(55, 65, 81, 0.85);
+            padding: 1rem 1.1rem;
+        }
+
+        .skills-category-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .skills-category-sub {
+            font-size: 0.76rem;
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .skills-list-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+        }
+
+        .skills-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .skills-timeline-item {
+            display: flex;
+            gap: 0.9rem;
+        }
+
+        .skills-timeline-year {
+            min-width: 90px;
+            color: var(--muted);
+        }
+
+        .skills-timeline-tech {
+            color: #e5e7eb;
+        }
+
+        /* Experience */
+        .experience-list {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .experience-item {
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(75, 85, 99, 0.85);
+            padding: 0.9rem 1rem;
+            font-size: 0.82rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .experience-role {
+            font-weight: 600;
+        }
+
+        .experience-company {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .experience-meta {
+            text-align: right;
+            font-size: 0.76rem;
+            color: var(--muted);
+            min-width: 120px;
+        }
+
+        .experience-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .experience-badge {
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            font-size: 0.7rem;
+            color: var(--muted);
+        }
+
+        .experience-desc {
+            color: var(--muted);
+            padding-left: 0.1rem;
+        }
+
+        .experience-desc ul {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+
+        .experience-desc li {
+            margin: 0.15rem 0;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0.85rem;
+        }
+
+        @media (min-width: 700px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: 16px;
+            border: 1px solid rgba(55, 65, 81, 0.85);
+            padding: 0.85rem 0.9rem;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .project-title {
+            font-weight: 600;
+            font-size: 0.86rem;
+        }
+
+        .project-tagline {
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+        }
+
+        .project-tag {
+            padding: 0.15rem 0.45rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(75, 85, 99, 0.9);
+            color: var(--muted);
+        }
+
+        .project-link {
+            margin-top: 0.1rem;
+            font-size: 0.76rem;
+        }
+
+        .project-link a {
+            color: var(--accent);
+        }
+
+        .project-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.3fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .contact-card {
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            padding: 1rem 1.1rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 0.55rem;
+            margin-top: 0.4rem;
+            font-size: 0.84rem;
+        }
+
+        .contact-item-label {
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+
+        .contact-item-value a {
+            color: var(--accent);
+        }
+
+        .contact-item-value a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            border-top: 1px solid rgba(30, 64, 175, 0.7);
+            background: rgba(15, 23, 42, 0.96);
+            font-size: 0.78rem;
+        }
+
+        .footer-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0.75rem 1.25rem 1.1rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Small devices */
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding-inline: 1rem;
+            }
+
+            .hero-card {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <!-- NAVBAR -->
+        <header>
+            <div class="nav">
+                <a href="#top" class="logo">
+                    <div class="logo-circle">A</div>
+                    <div>
+                        <div class="logo-text-title">Armin Bayu Murti</div>
+                        <div class="logo-text-sub">Fullstack Website &amp; Mobile Developer</div>
+                    </div>
+                </a>
+                <nav class="nav-links">
+                    <a href="#about">Tentang</a>
+                    <a href="#skills">Skill</a>
+                    <a href="#experience">Pengalaman</a>
+                    <a href="#portfolio">Portofolio</a>
+                    <a href="#contact">Kontak</a>
+                </nav>
+                <a href="mailto:arminbayu07@gmail.com" class="nav-cta">
+                    <span>Available for work</span> ✉️
+                </a>
+            </div>
+        </header>
+
+        <main id="top">
+            <div class="container">
+
+                <!-- HERO -->
+                <section class="hero" aria-label="Profil singkat">
+                    <div class="hero-left">
+                        <div class="hero-pill">
+                            <div class="hero-pill-dot"></div>
+                            <span>8+ tahun pengalaman</span>
+                            <span>•</span>
+                            <span>Website &amp; Mobile Apps</span>
+                        </div>
+
+                        <div>
+                            <h1 class="hero-title">
+                                Hai, saya <span>Armin Bayu Murti</span> 👋
+                            </h1>
+                            <p class="hero-subtitle">
+                                <strong>Fullstack Website &amp; Mobile Developer</strong> yang berfokus pada
+                                pembuatan aplikasi web dan mobile (Android &amp; iOS), REST API, serta integrasi
+                                layanan pihak ketiga. Terbiasa membangun solusi end-to-end mulai dari backend,
+                                frontend, sampai publikasi ke Play Store &amp; App Store.
+                            </p>
+                        </div>
+
+                        <div class="hero-tags">
+                            <span class="tag tag-primary">Laravel</span>
+                            <span class="tag tag-primary">Flutter</span>
+                            <span class="tag">PHP &amp; MySQL</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">Android &amp; iOS</span>
+                        </div>
+
+                        <div class="hero-actions">
+                            <a href="#portfolio" class="btn btn-primary">
+                                Lihat Portofolio
+                            </a>
+                            <a href="mailto:arminbayu07@gmail.com" class="btn btn-ghost">
+                                Hubungi via Email
+                            </a>
+                        </div>
+
+                        <div class="hero-meta">
+                            <div class="hero-meta-item">
+                                <strong>Domisili</strong><br />Bantul, Yogyakarta
+                            </div>
+                            <div class="hero-meta-item">
+                                <strong>Bahasa</strong><br />Indonesia, Inggris (dasar)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-right">
+                        <div class="hero-card">
+                            <div class="hero-orbit"></div>
+                            <div class="hero-orbit-dot"></div>
+
+                            <div class="hero-card-header">
+                                <div>
+                                    <div class="hero-name">Armin Bayu Murti</div>
+                                    <div class="hero-role">Fullstack Website &amp; Mobile Developer</div>
+                                    <div class="hero-location">Bantul, Yogyakarta</div>
+                                </div>
+                                <div class="badge-availability">
+                                    Tersedia untuk peluang baru
+                                </div>
+                            </div>
+
+                            <div class="hero-card-body">
+                                <div class="hero-skills">
+                                    <div class="hero-skills-title">Tech utama</div>
+                                    <div class="skill-list">
+                                        <span class="skill-pill">PHP</span>
+                                        <span class="skill-pill">Laravel</span>
+                                        <span class="skill-pill">Flutter</span>
+                                        <span class="skill-pill">JavaScript / jQuery</span>
+                                        <span class="skill-pill">MySQL</span>
+                                        <span class="skill-pill">REST API</span>
+                                    </div>
+                                </div>
+                                <div class="hero-contact">
+                                    <div class="hero-contact-item">
+                                        <span class="hero-contact-label">Email</span>
+                                        <span class="hero-contact-value">
+                                            <a href="mailto:arminbayu07@gmail.com">arminbayu07@gmail.com</a>
+                                        </span>
+                                    </div>
+                                    <div class="hero-contact-item">
+                                        <span class="hero-contact-label">Telepon / WhatsApp</span>
+                                        <span class="hero-contact-value">
+                                            <a href="tel:+6285725834330">+62 857 2583 4330</a>
+                                        </span>
+                                    </div>
+                                    <div class="hero-contact-item">
+                                        <span class="hero-contact-label">LinkedIn</span>
+                                        <span class="hero-contact-value">
+                                            <a href="https://www.linkedin.com/in/armin-bayu-murti-a806701b7"
+                                                target="_blank" rel="noreferrer">
+                                                linkedin.com/in/armin-bayu-murti-a806701b7
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="hero-contact-item">
+                                        <span class="hero-contact-label">GitHub</span>
+                                        <span class="hero-contact-value">
+                                            <a href="https://github.com/arminbayu" target="_blank" rel="noreferrer">
+                                                github.com/arminbayu
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-card-footer">
+                                <span>
+                                    <strong>2017 - sekarang</strong><br />
+                                    Fullstack Dev (Web &amp; Mobile)
+                                </span>
+                                <span>
+                                    <strong>PT Fasa Centra Artajaya</strong><br />
+                                    &amp; PT Karya Putra Esdepeel
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ABOUT -->
+                <section id="about">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Profil</div>
+                        <h2 class="section-title">Tentang saya</h2>
+                        <p class="section-description">
+                            Sekilas tentang latar belakang, mindset, dan cara saya memandang dunia programming.
+                        </p>
+                    </div>
+
+                    <div class="card about-text">
+                        <p class="about-highlight">
+                            Programming adalah sesuatu yang tidak akan pernah ada habisnya dan selalu menyenangkan untuk
+                            diikuti.
+                        </p>
+                        <p>
+                            Sejak 2017 saya fokus sebagai <strong>Fullstack Website &amp; Mobile Developer</strong> —
+                            membangun website, REST API, dan aplikasi Android/iOS untuk berbagai kebutuhan:
+                            mulai dari aplikasi sekolah, gereja, absensi karyawan, sampai sistem informasi bisnis.
+                        </p>
+                        <p>
+                            Saya terbiasa meng-handle seluruh lifecycle pengembangan:
+                            analisa kebutuhan, desain arsitektur, implementasi backend &amp; frontend, integrasi API,
+                            sampai deployment dan maintenance.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SKILLS -->
+                <section id="skills">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Skill</div>
+                        <h2 class="section-title">Teknologi &amp; kemampuan</h2>
+                        <p class="section-description">
+                            Kombinasi skill backend, frontend, mobile, dan tools pendukung pengembangan modern.
+                        </p>
+                    </div>
+
+                    <div class="skills-grid">
+                        <div class="skills-category">
+                            <div class="skills-category-title">Stack utama</div>
+                            <div class="skills-category-sub">
+                                Bahasa, framework, dan tools yang paling sering saya gunakan dalam projek sehari-hari.
+                            </div>
+
+                            <div class="skills-list-row">
+                                <span class="skill-pill">PHP</span>
+                                <span class="skill-pill">Laravel</span>
+                                <span class="skill-pill">CodeIgniter</span>
+                                <span class="skill-pill">Yii2</span>
+                                <span class="skill-pill">MySQL</span>
+                                <span class="skill-pill">Flutter</span>
+                                <span class="skill-pill">React Native (pengalaman)</span>
+                                <span class="skill-pill">JavaScript / jQuery</span>
+                                <span class="skill-pill">REST API</span>
+                                <span class="skill-pill">Git / GitLab</span>
+                                <span class="skill-pill">Postman / Insomnia</span>
+                                <span class="skill-pill">Android Studio</span>
+                                <span class="skill-pill">Xcode</span>
+                                <span class="skill-pill">Ubuntu &amp; Windows</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-category">
+                            <div class="skills-category-title">Timeline kemampuan</div>
+                            <div class="skills-category-sub">
+                                Perkembangan skill berdasarkan tahun mulai fokus.
+                            </div>
+
+                            <div class="skills-timeline">
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2017 - Sekarang</div>
+                                    <div class="skills-timeline-tech">
+                                        PHP, jQuery, HTML, CSS, MySQL
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2018 - 2021</div>
+                                    <div class="skills-timeline-tech">
+                                        React Native (mobile app)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2017 - 2021</div>
+                                    <div class="skills-timeline-tech">
+                                        CodeIgniter (web application)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2021 - 2023</div>
+                                    <div class="skills-timeline-tech">
+                                        Yii2 (web &amp; API)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2022 - Sekarang</div>
+                                    <div class="skills-timeline-tech">
+                                        Laravel (REST API &amp; web), Node.js (pengalaman)
+                                    </div>
+                                </div>
+                                <div class="skills-timeline-item">
+                                    <div class="skills-timeline-year">2021 - Sekarang</div>
+                                    <div class="skills-timeline-tech">
+                                        Flutter (Android &amp; iOS)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EXPERIENCE -->
+                <section id="experience">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Pengalaman Kerja</div>
+                        <h2 class="section-title">Rekam jejak profesional</h2>
+                        <p class="section-description">
+                            Pengalaman sebagai Fullstack Developer di lingkungan software house dan project-client
+                            dengan berbagai jenis bisnis dan kebutuhan aplikasi.
+                        </p>
+                    </div>
+
+                    <div class="experience-list">
+                        <article class="experience-item">
+                            <div class="experience-header">
+                                <div>
+                                    <div class="experience-role">Fullstack Website &amp; Mobile Developer</div>
+                                    <div class="experience-company">PT. Fasa Centra Artajaya</div>
+                                </div>
+                                <div class="experience-meta">
+                                    <div>Juli 2017 - Desember 2021</div>
+                                    <div>Full-time</div>
+                                </div>
+                            </div>
+
+                            <div class="experience-badges">
+                                <span class="experience-badge">Website &amp; Mobile Apps</span>
+                                <span class="experience-badge">REST API</span>
+                                <span class="experience-badge">Integrasi pihak ketiga</span>
+                                <span class="experience-badge">Deployment</span>
+                            </div>
+
+                            <div class="experience-desc">
+                                <ul>
+                                    <li>Membangun website dan aplikasi Android/iOS sesuai kebutuhan klien.</li>
+                                    <li>Mendesain dan mengembangkan REST API untuk mendukung aplikasi web dan mobile.
+                                    </li>
+                                    <li>Melakukan integrasi dengan API pihak ketiga (pembayaran, layanan eksternal,
+                                        dll).</li>
+                                    <li>Mempublikasikan aplikasi ke Play Store &amp; App Store.</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="experience-item">
+                            <div class="experience-header">
+                                <div>
+                                    <div class="experience-role">Fullstack Website &amp; Mobile Developer</div>
+                                    <div class="experience-company">PT. Karya Putra Esdepeel</div>
+                                </div>
+                                <div class="experience-meta">
+                                    <div>Desember 2021 - Sekarang</div>
+                                    <div>Full-time</div>
+                                </div>
+                            </div>
+
+                            <div class="experience-badges">
+                                <span class="experience-badge">Maintenance &amp; Improvement</span>
+                                <span class="experience-badge">Problem Solving</span>
+                                <span class="experience-badge">API Documentation</span>
+                            </div>
+
+                            <div class="experience-desc">
+                                <ul>
+                                    <li>Membangun dan memelihara website &amp; aplikasi agar berjalan stabil dan sesuai
+                                        kebutuhan pengguna.</li>
+                                    <li>Menganalisa permasalahan yang muncul di sistem dan merancang solusi yang tepat.
+                                    </li>
+                                    <li>Menerapkan solusi ke dalam sistem (bug fixing &amp; feature improvement).</li>
+                                    <li>Membangun REST API, integrasi pihak ketiga, dan membuat dokumentasi fungsi API.
+                                    </li>
+                                    <li>Mempublikasikan aplikasi ke Play Store.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- PORTFOLIO -->
+                <section id="portfolio">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Portofolio</div>
+                        <h2 class="section-title">Beberapa projek yang pernah saya kerjakan</h2>
+                        <p class="section-description">
+                            Fokus pada aplikasi yang membantu operasional bisnis, pendidikan, dan organisasi:
+                            mulai dari sekolah, gereja, absensi, hingga sistem informasi kargo.
+                        </p>
+                    </div>
+
+                    <div class="portfolio-grid">
+                        <article class="project-card">
+                            <h3 class="project-title">Aplikasi Sekolah</h3>
+                            <p class="project-tagline">
+                                Aplikasi untuk operasional sekolah: informasi siswa, kegiatan, dan komunikasi dengan
+                                orang tua.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">Laravel / REST API</span>
+                                <span class="project-tag">Flutter</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <h3 class="project-title">Aplikasi Gereja</h3>
+                            <p class="project-tagline">
+                                Aplikasi internal gereja untuk pengelolaan jemaat, jadwal ibadah, dan informasi
+                                kegiatan.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Mobile App</span>
+                                <span class="project-tag">Notifikasi</span>
+                                <span class="project-tag">Backend API</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <h3 class="project-title">Aplikasi Preorder &amp; Marketplace</h3>
+                            <p class="project-tagline">
+                                Platform untuk pre-order dan marketplace media periklanan dengan integrasi pembayaran
+                                online.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">E-commerce</span>
+                                <span class="project-tag">Payment Gateway</span>
+                                <span class="project-tag">Web &amp; Mobile</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <h3 class="project-title">Aplikasi Belajar Hijaiyah</h3>
+                            <p class="project-tagline">
+                                Aplikasi edukasi untuk belajar huruf hijaiyah secara interaktif di perangkat mobile.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Edu Tech</span>
+                                <span class="project-tag">Mobile App</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <h3 class="project-title">Aplikasi Absensi</h3>
+                            <p class="project-tagline">
+                                Aplikasi absensi karyawan real-time dengan backend khusus HR dan laporan kehadiran.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">HR System</span>
+                                <span class="project-tag">Web &amp; Mobile</span>
+                                <span class="project-tag">REST API</span>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <h3 class="project-title">Website Company Profile &amp; Sistem Informasi Kargo</h3>
+                            <p class="project-tagline">
+                                Website company profile dan sistem informasi untuk pengelolaan kargo &amp; logistik.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Company Profile</span>
+                                <span class="project-tag">Backend Panel</span>
+                                <span class="project-tag">Custom CMS</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- CONTACT -->
+                <section id="contact">
+                    <div class="section-header">
+                        <div class="section-eyebrow">Kontak</div>
+                        <h2 class="section-title">Mari berdiskusi</h2>
+                        <p class="section-description">
+                            Tertarik bekerja sama, butuh developer untuk project baru, atau ingin mengembangkan sistem
+                            yang sudah ada?
+                            Silakan hubungi saya melalui salah satu kontak berikut.
+                        </p>
+                    </div>
+
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <h3 style="margin-top: 0; font-size: 0.95rem;">Informasi kontak</h3>
+                            <div class="contact-list">
+                                <div>
+                                    <div class="contact-item-label">Email</div>
+                                    <div class="contact-item-value">
+                                        <a href="mailto:arminbayu07@gmail.com">arminbayu07@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="contact-item-label">Telepon / WhatsApp</div>
+                                    <div class="contact-item-value">
+                                        <a href="tel:+6285725834330">+62 857 2583 4330</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="contact-item-label">LinkedIn</div>
+                                    <div class="contact-item-value">
+                                        <a href="https://www.linkedin.com/in/armin-bayu-murti-a806701b7" target="_blank"
+                                            rel="noreferrer">
+                                            linkedin.com/in/armin-bayu-murti-a806701b7
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="contact-item-label">GitHub</div>
+                                    <div class="contact-item-value">
+                                        <a href="https://github.com/arminbayu" target="_blank" rel="noreferrer">
+                                            github.com/arminbayu
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="contact-item-label">Domisili</div>
+                                    <div class="contact-item-value">
+                                        Bantul, Yogyakarta
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3 style="margin-top: 0; font-size: 0.95rem;">Catatan untuk recruiter / klien</h3>
+                            <p style="margin-top: 0; font-size: 0.84rem; color: #9ca3af;">
+                                Saya terbuka untuk:
+                            </p>
+                            <ul style="margin-top: 0; padding-left: 1.1rem; font-size: 0.84rem; color: #9ca3af;">
+                                <li>Posisi Fullstack Developer (Web &amp; Mobile).</li>
+                                <li>Development atau refactor sistem HR, sekolah, gereja, dan sistem bisnis lain.</li>
+                                <li>Kerja sama project jangka pendek maupun jangka panjang.</li>
+                            </ul>
+                            <p style="font-size: 0.82rem; color: #9ca3af;">
+                                Silakan kirim detail kebutuhan Anda, saya akan dengan senang hati membantu
+                                menganalisa dan memberikan solusi teknis yang sesuai.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-inner">
+                <span>© <span id="year"></span> Armin Bayu Murti</span>
+                <span>Built with ❤️ &amp; deployed on GitHub Pages</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Set tahun otomatis
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
